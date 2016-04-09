@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "foundation-sites": "^6.2.1"
+  },
+  "scripts": {
+    "start": "node-sass styles/main.scss > styles/bundle.css" 
+  }
+}
