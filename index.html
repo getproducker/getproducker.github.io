@@ -4,31 +4,89 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/styles/bundle.css">
-    <title></title>
+    <title>Producker | Launching Soon</title>
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("6688599877510b0fa8e8f3375cde6071");</script>
 </head>
 <body>
-<div class="launch text-center">
+<div class="launch-page text-center">
     <div class="row">
-        <div class="medium-6 medium-offset-3 columns">
-            <img src="/img/duck.png" width="30%" height="30%" alt="logo">
+        <div class="large-6 large-offset-3 columns">
+            <div class="text-center">
+                <a href="/"><img src="/img/duck.png" width="30%" height="30%" alt="logo"></a>
+            </div>
             <h1>Producker</h1>
             <h3 class="text-center">The best way for creators, professionals and investors to bring their ideas to life.</h3>
             <h3>Join forces and create amazing projects.</h3>
-            <form action="#">
-                <input type="text" placeholder="Email">
-                <p>We won't spam you!</p>
-                <button type="submit" class="button large">Stay Tuned!</button>
-            </form>
-            <div>
-                <p class="footer-caption text-center">You can also invite friends</p>
+            
+            <div class="row" id="js-form">
+                <div class="large-8 large-offset-2 columns">
+                    <form action="#" class="form-signup js-form-signup">
+                        <div class="email-field">
+                            <small class="is-invalid-label hide js-invalid-email">Email is not valid</small>
+                            <input type="text" placeholder="Email" id="js-input" required>
+                        </div>
+                        <button type="submit" class="button large">Stay Tuned!</button>
+                        <p class="caption">We won't spam you!</p>
+                    </form>            
+                </div>
+            </div>
+        
+            <div id="js-invite" class="hide" style="margin-top: 10px;">
+                <p>Thanks a lot for your support!</p>
+                <p>It will be great if you share Producker with your friends:</p>
                 <div class="text-center">
-                    <a class="social" href="#"><img src="/img/tw.png" /></a>
-                    <a class="social" href="#"><img src="/img/fb.png" /></a>
-                    <a class="social" href="#"><img src="/img/mail.png" /></a>
+                    <a class="social" href="https://www.facebook.com/sharer/sharer.php?u=producker.com" target="_blank"><img src="/img/fb.png" /></a>
+                    <a class="social" href="https://twitter.com/home?status=Producker%20-%20The%20best%20way%20for%20creators,%20professionals%20and%20investors%20to%20bring%20their%20ideas%20to%20life!%20http%3A//producker.com" target="_blank"><img src="/img/tw.png" /></a>
+                    <a class="social" href="mailto:?Subject=Producker — The best way for creators, professionals and investors to bring their ideas to life" target="_top"><img src="/img/mail.png" /></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="//code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $invalidEmailLabel = $('.js-invalid-email');
+    $emailInput = $('#js-input');
+    $form = $('.js-form-signup');
+    $formView = $('#js-form');
+    $inviteView = $('#js-invite');
+
+    function isValidEmail(email) {
+        var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        return re.test(email)
+    }
+
+    function signup(event) {
+        event.preventDefault();
+        email = $emailInput.val();
+
+        if (!isValidEmail(email)) {
+            $emailInput.addClass('is-invalid-input');
+            $invalidEmailLabel.removeClass('hide');
+            return;
+        }
+
+        if (email != mixpanel.get_distinct_id()) {
+            mixpanel.identify(email);
+            mixpanel.people.set_once({
+                $email: email,
+                leadFrom: 'launch-page',
+            });
+        }
+
+        $formView.addClass('hide');
+        $inviteView.removeClass('hide');
+    }
+
+    $form.on('submit', signup);
+    $emailInput.on('focus', function() {
+        if (!$invalidEmailLabel.hasClass('hide')) {
+            $invalidEmailLabel.addClass('hide');
+        }
+    });
+
+</script>
 </body>
 </html>

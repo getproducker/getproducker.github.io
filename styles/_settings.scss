@@ -44,11 +44,13 @@
 
 //0. My variables
 // --------------
+$primary-color: #32C3A5;
+$secondary-color: #909090;
 
 $white-opacity: rgba(255,255,255,0.95);
 $transparent-color: rgba(255,255,255,0);
 $medium-green: rgba(35,180,150,0.55); //50 195 150 0.6
-$light-green: rgba(50,195,165,0.2);   // F6FEFC
+$light-green: scale-color($primary-color, $lightness: 50%);
 $medium-green-solid: rgba(211,237,230,1);
 $deep-green: #8EDECD;
 $light-gray-opacity: rgba(155,155,155, 0.5);
@@ -61,12 +63,10 @@ $blue: #3A5DFF;
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$primary-color: #32C3A5;
-$secondary-color: #909090;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
-$light-gray: #D7D7D7;
+$light-gray: #C7C7C7;
 $medium-gray: $secondary-color;
 $dark-gray: #F4F4F4;
 $black: #0a0a0a;
@@ -350,11 +350,11 @@ $select-triangle-color: $primary-color;
 $select-radius: $global-radius;
 $input-color: $primary-color;
 $input-font-family: inherit;
-$input-font-size: rem-calc(16);
+$input-font-size: rem-calc(18);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $light-green;
+$input-border: 1px solid $light-gray;
 $input-border-focus: 1px solid $primary-color;
 $input-shadow: inset 0 0 0 rgba($black, 0);
 $input-shadow-focus: 0 0 0 $medium-gray;
