@@ -71,8 +71,8 @@
         if (email != mixpanel.get_distinct_id()) {
             mixpanel.identify(email);
             mixpanel.people.set_once({
-                $email: email,
-                leadFrom: 'launch-page',
+                "$email": email,
+                "Lead From": 'launch-page',
             });
         }
 
