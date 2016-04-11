@@ -26,17 +26,16 @@
     }
   }
 
-button {
+button.button.large {
   border: 1px solid $primary-color;
 }
-button:active {
+button.button.large:active {
   background: $primary-color;
   color: white;
 }
 
   .form-signup {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin: 10px 15px 5px 15px;
   }
 
   .social:hover {
