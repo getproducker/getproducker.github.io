@@ -29,6 +29,9 @@
 button.button.large {
   border: 1px solid $primary-color;
 }
+button.button.large:hover {
+  background: $light-green;
+}
 button.button.large:active {
   background: $primary-color;
   color: white;
