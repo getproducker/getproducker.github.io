@@ -60,7 +60,7 @@
 
     function signup(event) {
         event.preventDefault();
-        email = $emailInput.val();
+        email = $emailInput.val().toLowerCase();
 
         if (!isValidEmail(email)) {
             $emailInput.addClass('is-invalid-input');
