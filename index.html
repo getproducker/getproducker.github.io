@@ -47,46 +47,47 @@
 </div>
 <script src="//code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $invalidEmailLabel = $('.js-invalid-email');
-    $emailInput = $('#js-input');
-    $form = $('.js-form-signup');
-    $formView = $('#js-form');
-    $inviteView = $('#js-invite');
+    (function() {
+        $invalidEmailLabel = $('.js-invalid-email');
+        $emailInput = $('#js-input');
+        $form = $('.js-form-signup');
+        $formView = $('#js-form');
+        $inviteView = $('#js-invite');
 
-    function isValidEmail(email) {
-        var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        return re.test(email)
-    }
-
-    function signup(event) {
-        event.preventDefault();
-        email = $emailInput.val().toLowerCase();
-
-        if (!isValidEmail(email)) {
-            $emailInput.addClass('is-invalid-input');
-            $invalidEmailLabel.removeClass('hide');
-            return;
+        function isValidEmail(email) {
+            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            return re.test(email)
         }
 
-        if (email != mixpanel.get_distinct_id()) {
-            mixpanel.identify(email);
-            mixpanel.people.set_once({
-                "$email": email,
-                "Lead From": 'launch-page',
-            });
+        function signup(event) {
+            event.preventDefault();
+            email = $emailInput.val().toLowerCase();
+
+            if (!isValidEmail(email)) {
+                $emailInput.addClass('is-invalid-input');
+                $invalidEmailLabel.removeClass('hide');
+                return;
+            }
+
+            if (email != mixpanel.get_distinct_id()) {
+                mixpanel.identify(email);
+                mixpanel.people.set_once({
+                    "$email": email,
+                    "Lead From": 'launch-page',
+                });
+            }
+
+            $formView.addClass('hide');
+            $inviteView.removeClass('hide');
         }
 
-        $formView.addClass('hide');
-        $inviteView.removeClass('hide');
-    }
-
-    $form.on('submit', signup);
-    $emailInput.on('focus', function() {
-        if (!$invalidEmailLabel.hasClass('hide')) {
-            $invalidEmailLabel.addClass('hide');
-        }
-    });
-
+        $form.on('submit', signup);
+        $emailInput.on('focus', function() {
+            if (!$invalidEmailLabel.hasClass('hide')) {
+                $invalidEmailLabel.addClass('hide');
+            }
+        });
+    })()
 </script>
 </body>
 </html>
