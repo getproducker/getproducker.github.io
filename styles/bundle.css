@@ -3468,4 +3468,13 @@ table.hover tr:nth-of-type(even):hover {
     margin: 10px 15px 5px 15px; }
   .launch-page .social:hover {
     background: #32C3A5; }
+  .launch-page ::selection {
+    background: transparent;
+    /* Safari */ }
+  .launch-page ::-moz-selection {
+    background: transparent;
+    /* Firefox */ }
+  .launch-page ::-webkit-selection {
+    background: transparent;
+    /* Safari */ }
 

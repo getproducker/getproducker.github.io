@@ -44,4 +44,15 @@ button.button.large:active {
   .social:hover {
     background: $primary-color;
   }
+
+::selection {
+background: transparent; /* Safari */
+}
+::-moz-selection {
+background: transparent; /* Firefox */
+}
+::-webkit-selection {
+background: transparent; /* Safari */
+}
+
 }
