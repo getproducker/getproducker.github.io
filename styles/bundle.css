@@ -3457,14 +3457,15 @@ table.hover tr:nth-of-type(even):hover {
     border-radius: 6px; }
     .launch-page .social img {
       height: 25px; }
-  .launch-page button {
+  .launch-page button.button.large {
     border: 1px solid #32C3A5; }
-  .launch-page button:active {
+  .launch-page button.button.large:hover {
+    background: #96e4d4; }
+  .launch-page button.button.large:active {
     background: #32C3A5;
     color: white; }
   .launch-page .form-signup {
-    margin-top: 10px;
-    margin-bottom: 5px; }
+    margin: 10px 15px 5px 15px; }
   .launch-page .social:hover {
     background: #32C3A5; }
 
