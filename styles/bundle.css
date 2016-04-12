@@ -3467,7 +3467,13 @@ table.hover tr:nth-of-type(even):hover {
   .launch-page .form-signup {
     margin: 10px 15px 5px 15px; }
     .launch-page .form-signup input::selection {
-      background: #C7C7C7; }
+      background: #909090; }
+    .launch-page .form-signup input::-moz-selection {
+      background: #909090;
+      /* Firefox */ }
+    .launch-page .form-signup input::-webkit-selection {
+      background: #909090;
+      /* Safari */ }
   .launch-page .social:hover {
     background: #32C3A5; }
   .launch-page ::selection {

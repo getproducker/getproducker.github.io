@@ -40,8 +40,14 @@ button.button.large:active {
   .form-signup {
     margin: 10px 15px 5px 15px;
     input::selection {
-    background: $light-gray;
-   }
+      background: $medium-gray;
+    }
+    input::-moz-selection {
+      background: $medium-gray; /* Firefox */
+    }
+    input::-webkit-selection {
+      background: $medium-gray; /* Safari */
+    }
   }
 
   .social:hover {
