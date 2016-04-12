@@ -39,6 +39,9 @@ button.button.large:active {
 
   .form-signup {
     margin: 10px 15px 5px 15px;
+    input::selection {
+    background: $light-gray;
+   }
   }
 
   .social:hover {

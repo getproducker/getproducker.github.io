@@ -3466,6 +3466,8 @@ table.hover tr:nth-of-type(even):hover {
     color: white; }
   .launch-page .form-signup {
     margin: 10px 15px 5px 15px; }
+    .launch-page .form-signup input::selection {
+      background: #C7C7C7; }
   .launch-page .social:hover {
     background: #32C3A5; }
   .launch-page ::selection {
