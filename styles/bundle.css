@@ -1598,7 +1598,7 @@ legend {
   max-width: 100%; }
 
 .fieldset {
-  border: 1px solid #96e4d4;
+  border: 1px solid rgba(50, 195, 165, 0.2);
   padding: 1.25rem;
   margin: 1.125rem 0; }
   .fieldset legend {
@@ -1672,7 +1672,7 @@ select {
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #96e4d4;
+    background-color: rgba(50, 195, 165, 0.2);
     color: #32C3A5; }
   .button.tiny {
     font-size: 0.6rem; }
@@ -3460,19 +3460,19 @@ table.hover tr:nth-of-type(even):hover {
   .launch-page button.button.large {
     border: 1px solid #32C3A5; }
   .launch-page button.button.large:hover {
-    background: #96e4d4; }
+    background: rgba(50, 195, 165, 0.2); }
   .launch-page button.button.large:active {
     background: #32C3A5;
     color: white; }
   .launch-page .form-signup {
     margin: 10px 15px 5px 15px; }
     .launch-page .form-signup input::selection {
-      background: #F4F4F4; }
+      background: rgba(50, 195, 165, 0.2); }
     .launch-page .form-signup input::-moz-selection {
-      background: #F4F4F4;
+      background: rgba(50, 195, 165, 0.2);
       /* Firefox */ }
     .launch-page .form-signup input::-webkit-selection {
-      background: #F4F4F4;
+      background: rgba(50, 195, 165, 0.2);
       /* Safari */ }
   .launch-page .social:hover {
     background: #32C3A5; }
@@ -3486,6 +3486,6 @@ table.hover tr:nth-of-type(even):hover {
     background: transparent;
     /* Safari */ }
   .launch-page input::-webkit-selection {
-    background: #F4F4F4;
+    background: rgba(50, 195, 165, 0.2);
     /* Safari */ }
 

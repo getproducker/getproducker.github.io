@@ -40,13 +40,13 @@ button.button.large:active {
   .form-signup {
     margin: 10px 15px 5px 15px;
     input::selection {
-      background: $dark-gray;
+      background: $light-green;
     }
     input::-moz-selection {
-      background: $dark-gray; /* Firefox */
+      background: $light-green; /* Firefox */
     }
     input::-webkit-selection {
-      background: $dark-gray; /* Safari */
+      background: $light-green; /* Safari */
     }
   }
 
@@ -64,7 +64,7 @@ background: transparent; /* Firefox */
 background: transparent; /* Safari */
 }
 input::-webkit-selection {
-  background: $dark-gray; /* Safari */
+  background: $light-green; /* Safari */
 }
 
 }
