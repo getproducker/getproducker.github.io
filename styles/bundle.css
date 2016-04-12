@@ -3467,12 +3467,12 @@ table.hover tr:nth-of-type(even):hover {
   .launch-page .form-signup {
     margin: 10px 15px 5px 15px; }
     .launch-page .form-signup input::selection {
-      background: #909090; }
+      background: #F4F4F4; }
     .launch-page .form-signup input::-moz-selection {
-      background: #909090;
+      background: #F4F4F4;
       /* Firefox */ }
     .launch-page .form-signup input::-webkit-selection {
-      background: #909090;
+      background: #F4F4F4;
       /* Safari */ }
   .launch-page .social:hover {
     background: #32C3A5; }
@@ -3484,5 +3484,8 @@ table.hover tr:nth-of-type(even):hover {
     /* Firefox */ }
   .launch-page ::-webkit-selection {
     background: transparent;
+    /* Safari */ }
+  .launch-page input::-webkit-selection {
+    background: #F4F4F4;
     /* Safari */ }
 
